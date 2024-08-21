@@ -22,5 +22,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.1"
   }
 }
