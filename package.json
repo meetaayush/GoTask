@@ -2,7 +2,7 @@
   "name": "gotask",
   "type": "module",
   "source": [
-    "./assets/base.scss",
+    "./assets/base.css",
     "./assets/index.ts"
   ],
   "targets": {
@@ -11,7 +11,7 @@
     }
   },
   "scripts": {
-    "dev": "rm -rf .parcel-cache && parcel build"
+    "dev": "rm -rf .parcel-cache && rm -rf static && parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
