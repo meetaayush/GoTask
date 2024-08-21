@@ -1,9 +1,10 @@
 package auth
 
 import "github.com/meetaayush/gotask/views/layouts"
+import "github.com/meetaayush/gotask/models"
 
-templ Signup() {
-    @layouts.Base("Signup | Register new account") {
+templ Signup(tm *models.TemplateModel) {
+    @layouts.Base(tm.StringMap["title"]) {
         <div>   
             <h2>Signup here | Register a new account</h2>
         </div>

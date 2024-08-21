@@ -3,6 +3,7 @@ package handlers
 import (
 	"net/http"
 
+	"github.com/meetaayush/gotask/models"
 	"github.com/meetaayush/gotask/pkgs/config"
 	"github.com/meetaayush/gotask/views/pages"
 	"github.com/meetaayush/gotask/views/pages/auth"
@@ -25,9 +26,19 @@ func NewHandler(r *Repository) {
 }
 
 func (repo *Repository) Home(w http.ResponseWriter, r *http.Request) {
-	Render(w, r, pages.Home())
+	data := make(map[string]string)
+	data["title"] = "Gotask | Homepage"
+	tm := &models.TemplateModel{
+		StringMap: data,
+	}
+	Render(w, r, pages.Home(tm))
 }
 
 func (repo *Repository) Signup(w http.ResponseWriter, r *http.Request) {
-	Render(w, r, auth.Signup())
+	data := make(map[string]string)
+	data["title"] = "Gotask | Register a new account"
+	tm := &models.TemplateModel{
+		StringMap: data,
+	}
+	Render(w, r, auth.Signup(tm))
 }
