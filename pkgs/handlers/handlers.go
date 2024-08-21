@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/meetaayush/gotask/pkgs/config"
+	"github.com/meetaayush/gotask/views/pages"
+	"github.com/meetaayush/gotask/views/pages/auth"
 )
 
 var Repo *Repository
@@ -24,10 +25,9 @@ func NewHandler(r *Repository) {
 }
 
 func (repo *Repository) Home(w http.ResponseWriter, r *http.Request) {
-	str := fmt.Sprintf("Hello from home page. Env: %v", repo.App.Environment)
-	w.Write([]byte(str))
+	Render(w, r, pages.Home())
 }
 
 func (repo *Repository) Signup(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Sign up page"))
+	Render(w, r, auth.Signup())
 }
