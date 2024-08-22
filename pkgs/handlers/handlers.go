@@ -42,3 +42,12 @@ func (repo *Repository) Signup(w http.ResponseWriter, r *http.Request) {
 	}
 	Render(w, r, auth.Signup(tm))
 }
+
+func (repo *Repository) Signin(w http.ResponseWriter, r *http.Request) {
+	data := make(map[string]string)
+	data["title"] = "Gotask | Login to your account"
+	tm := &models.TemplateModel{
+		StringMap: data,
+	}
+	Render(w, r, auth.Signin(tm))
+}
