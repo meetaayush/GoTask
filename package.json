@@ -10,8 +10,12 @@
       "distDir": "./cmd/web/static"
     }
   },
+  "staticFiles": {
+    "staticPath": "assets/images",
+    "staticOutPath": "images"
+  },
   "scripts": {
-    "dev": "rm -rf .parcel-cache && rm -rf static && parcel build"
+    "dev": "rm -rf .parcel-cache && rm -rf cmd/web/static && parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
@@ -24,6 +28,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "flowbite": "^2.5.1"
+    "flowbite": "^2.5.1",
+    "parcel-reporter-static-files-copy": "^1.5.3"
   }
 }

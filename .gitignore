@@ -1,3 +1,5 @@
 node_modules
 /.parcel-cache
 /static
+.DS_Store
+/cmd/web/static
