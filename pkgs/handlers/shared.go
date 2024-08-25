@@ -11,5 +11,5 @@ func Render(w http.ResponseWriter, r *http.Request, template templ.Component) er
 }
 
 func Static() http.Handler {
-	return http.StripPrefix("/static/", http.FileServer(http.Dir("./static")))
+	return http.StripPrefix("/static/", http.FileServer(http.Dir("./cmd/web/static")))
 }
