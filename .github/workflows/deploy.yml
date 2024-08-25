@@ -18,7 +18,9 @@ jobs:
         go-version: '1.20'
 
     - name: Built assets
-      run: bun run dev
+      run: |
+        bun install
+        bun run dev
 
     - name: Build
       run: go build cmd/web/*.go

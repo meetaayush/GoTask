@@ -18,6 +18,7 @@
     "dev": "rm -rf .parcel-cache && rm -rf cmd/web/static && parcel build"
   },
   "devDependencies": {
+    "@parcel/config-default": "^2.12.0",
     "@parcel/transformer-sass": "^2.12.0",
     "@types/bun": "latest",
     "parcel": "^2.12.0",
