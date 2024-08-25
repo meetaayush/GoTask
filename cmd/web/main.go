@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"fmt"
 	"net/http"
 
@@ -8,6 +9,8 @@ import (
 	"github.com/meetaayush/gotask/pkgs/handlers"
 )
 
+//go:embed files/index.html
+var staticFiles embed.FS
 var app config.AppConfig
 
 func main() {

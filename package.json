@@ -7,7 +7,7 @@
   ],
   "targets": {
     "default": {
-      "distDir": "./static"
+      "distDir": "./cmd/web/static"
     }
   },
   "scripts": {
