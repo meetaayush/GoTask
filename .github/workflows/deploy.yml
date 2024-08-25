@@ -29,23 +29,5 @@ jobs:
         chmod 600 do_ssh_key
         scp -i do_ssh_key -o StrictHostKeyChecking=no main $DO_USER@$DO_HOST:~/main
         ssh -i do_ssh_key -o StrictHostKeyChecking=no $DO_USER@$DO_HOST '
-          sudo systemctl stop myapp || true
-          sudo mv ~/main /usr/local/bin/
-          sudo tee /etc/systemd/system/myapp.service << EOF
-          [Unit]
-          Description=GoTask app
-          After=network.target
-
-          [Service]
-          ExecStart=/usr/local/bin/main
-          Restart=always
-          User=root
-          Environment=PORT=8080
-
-          [Install]
-          WantedBy=multi-user.target
-          EOF
-          sudo systemctl daemon-reload
-          sudo systemctl enable myapp
-          sudo systemctl start myapp
+          sudo systemctl restart myapp
         '
