@@ -9,7 +9,7 @@ import (
 	"github.com/meetaayush/gotask/pkgs/handlers"
 )
 
-//go:embed files/index.html
+//go:embed static
 var staticFiles embed.FS
 var app config.AppConfig
 

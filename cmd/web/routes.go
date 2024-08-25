@@ -10,7 +10,7 @@ import (
 func routes() http.Handler {
 	mux := chi.NewRouter()
 
-	mux.Handle("/static/*", handlers.Static())
+	mux.Handle("/static/*", handlers.Static(staticFiles))
 
 	mux.Get("/", handlers.Repo.Home)
 	mux.Get("/signup", handlers.Repo.Signup)
