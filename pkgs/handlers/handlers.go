@@ -51,3 +51,12 @@ func (repo *Repository) Signin(w http.ResponseWriter, r *http.Request) {
 	}
 	Render(w, r, auth.Signin(tm))
 }
+
+func (repo *Repository) ForgotPassword(w http.ResponseWriter, r *http.Request) {
+	data := make(map[string]string)
+	data["title"] = "Gotask | Forgot Password"
+	tm := &models.TemplateModel{
+		StringMap: data,
+	}
+	Render(w, r, auth.ForgotPassword(tm))
+}

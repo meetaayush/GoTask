@@ -32,7 +32,7 @@ func Signin(tm *models.TemplateModel) templ.Component {
 				templ_7745c5c3_Buffer = templ.GetBuffer()
 				defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- component --> <div class=\"h-screen\"><div class=\"px-6 py-4\"><h1 class=\"text-2xl font-medium px-6 md:px-10 text-center font-montserrat\">GoTask</h1><p class=\"text-sm font-semibold text-center font-montserrat text-gray-400\">Your best work starts here</p></div><hr class=\"h-px mb-8 bg-gray-200 border-0 dark:bg-gray-700\"><div class=\"flex md:w-full justify-center p-10 items-center bg-white\"><form class=\"w-full max-w-sm mx-auto\"><div class=\"mb-5\"><label for=\"email\" class=\"font-montserrat block mb-2 text-sm font-medium text-gray-900 dark:text-white\">Your email</label> <input placeholder=\"ayush@gotask.live\" type=\"email\" id=\"email\" class=\"shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light\" required></div><div class=\"mb-5\"><label for=\"password\" class=\"font-montserrat block mb-2 text-sm font-medium text-gray-900 dark:text-white\">Your password</label><div class=\"relative\"><div class=\"h-full absolute inset-y-0 end-3 flex items-center ps-3.5 cursor-pointer\" onclick=\"togglePassword()\"><svg id=\"showpassword\" class=\"hidden w-6 h-6 text-gray-400 dark:text-white\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-width=\"2\" d=\"M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z\"></path> <path stroke=\"currentColor\" stroke-width=\"2\" d=\"M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z\"></path></svg> <svg id=\"hidepassword\" class=\"w-6 h-6 text-gray-400 dark:text-white\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3.933 13.909A4.357 4.357 0 0 1 3 12c0-1 4-6 9-6m7.6 3.8A5.068 5.068 0 0 1 21 12c0 1-3 6-9 6-.314 0-.62-.014-.918-.04M5 19 19 5m-4 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z\"></path></svg></div><input type=\"password\" id=\"password\" placeholder=\"******\" class=\"shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light\" required></div></div><div class=\"flex justify-end mb-5\"><a class=\"text-blue-600 font-montserrat hover:underline dark:text-blue-500\" href=\"/forgot-password\">Forgot password?</a></div><button type=\"submit\" class=\"w-full text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\">Sign in to your account</button></form></div><p class=\"px-10 mx-[23.25] text-center text-gray-400\">Don't have an account? <a class=\"text-blue-600 font-montserrat hover:underline dark:text-blue-500\" href=\"/signup\">Sign up</a></p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -40,7 +40,7 @@ func Signin(tm *models.TemplateModel) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -73,7 +73,7 @@ func showHidePassword() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<script>\n        function togglePassword() {\n            const x = document.getElementById(\"password\");\n            const hidepassword = document.getElementById(\"hidepassword\")\n            const showpassword = document.getElementById(\"showpassword\")\n            if (x.type === \"password\") {\n                x.type = \"text\";\n                showpassword.classList.remove(\"hidden\")\n                hidepassword.classList.add(\"hidden\")\n                \n            } else {\n                x.type = \"password\";\n                showpassword.classList.add(\"hidden\")\n                hidepassword.classList.remove(\"hidden\")\n            }\n        }\n    </script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

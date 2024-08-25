@@ -23,7 +23,7 @@ func AuthLayout(title string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -31,7 +31,7 @@ func AuthLayout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</html><body><div class=\"h-screen w-screen flex flex-col md:flex-row justify-center items-center\"><div class=\"grow bg-white\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -39,7 +39,7 @@ func AuthLayout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"h-screen relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden\"><div class=\"w-full md:w-11/12 lg:w-9/12\"><h2 class=\"text-white font-semibold text-4xl font-montserrat\">GoTask</h2><h1 class=\"text-gray-50 font-bold text-lg md:text-3xl lg:text-5xl mt-4\">The most popular <br>task management <br>System.</h1><p class=\"text-white mt-2\">Millions of designers and developers around the world manage their work on GoTask.</p><div class=\"mt-2 flex align-center justify-between w-96\"><div class=\"flex -space-x-4 rtl:space-x-reverse\"><img class=\"w-8 h-8 border-2 border-white rounded-full dark:border-gray-800\" src=\"https://randomuser.me/api/portraits/thumb/men/39.jpg\" alt=\"\"> <img class=\"w-8 h-8 border-2 border-white rounded-full dark:border-gray-800\" src=\"https://randomuser.me/api/portraits/thumb/women/39.jpg\" alt=\"\"> <img class=\"w-8 h-8 border-2 border-white rounded-full dark:border-gray-800\" src=\"https://randomuser.me/api/portraits/thumb/women/38.jpg\" alt=\"\"></div><span class=\"text-white opacity-40\">|</span><p class=\"text-white font-montserrat\">Over <strong>1.5k+</strong>&nbsp;Happy Customers</p></div></div><div class=\"absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-10 border-t-8 border-indigo-400\"></div><div class=\"absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-20 border-t-8 border-indigo-400\"></div><div class=\"absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-10 border-t-8 border-indigo-400\"></div><div class=\"absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-20 border-t-8 border-indigo-400\"></div></div></div><script src=\"./static/index.js\"></script></body>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -63,7 +63,7 @@ func Head(title string) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 4)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -76,7 +76,7 @@ func Head(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 5)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><link rel=\"stylesheet\" href=\"./static/base.css\"></head>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
