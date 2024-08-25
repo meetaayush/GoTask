@@ -29,5 +29,9 @@ jobs:
         chmod 600 do_ssh_key
         scp -i do_ssh_key -o StrictHostKeyChecking=no main $DO_USER@$DO_HOST:~/main
         ssh -i do_ssh_key -o StrictHostKeyChecking=no $DO_USER@$DO_HOST '
-          sudo systemctl restart myapp
+          sudo systemctl stop myapp || true
+          sudo mv ~/main /usr/local/bin/
+          sudo systemctl daemon-reload
+          sudo systemctl enable myapp
+          sudo systemctl start myapp
         '
