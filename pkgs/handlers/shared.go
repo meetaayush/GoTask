@@ -1,22 +1,22 @@
 package handlers
 
 import (
+	"bytes"
 	"io/fs"
 	"log"
 	"net/http"
-	"os"
-	"path/filepath"
 	"time"
 
 	"github.com/a-h/templ"
+	"github.com/meetaayush/gotask/pkgs/assets"
 )
 
 func Render(w http.ResponseWriter, r *http.Request, template templ.Component) error {
 	return template.Render(r.Context(), w)
 }
 
-func Static(staticFiles fs.FS) http.Handler {
-	staticFs, err := fs.Sub(staticFiles, "static")
+func Static() http.Handler {
+	staticFs, err := fs.Sub(assets.StaticFiles, "static")
 	if err != nil {
 		log.Fatal("error creating filesystem: ", err)
 	}
@@ -25,20 +25,11 @@ func Static(staticFiles fs.FS) http.Handler {
 
 // Favicon returns the favicon.ico file
 func Favicon(w http.ResponseWriter, r *http.Request) {
-	// Specify the path to favicon.ico file
-	faviconPath := filepath.Join("cmd", "web", "static", "images", "favicon.ico")
-
-	// Open the favicon file
-	file, err := os.Open(faviconPath)
+	file, err := assets.StaticFiles.ReadFile("static/images/favicon.ico")
 	if err != nil {
-		http.Error(w, "Favicon not found", http.StatusNotFound)
+		http.Error(w, "error finding favicon file", http.StatusNotFound)
 		return
 	}
-	defer file.Close()
 
-	// Set the content type
-	w.Header().Set("Content-Type", "image/x-icon")
-
-	// Serve the file
-	http.ServeContent(w, r, "favicon.ico", time.Now(), file)
+	http.ServeContent(w, r, "favicon.ico", time.Now(), bytes.NewReader(file))
 }

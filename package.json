@@ -7,7 +7,7 @@
   ],
   "targets": {
     "default": {
-      "distDir": "./cmd/web/static"
+      "distDir": "./pkgs/assets/static"
     }
   },
   "staticFiles": {
@@ -15,7 +15,7 @@
     "staticOutPath": "images"
   },
   "scripts": {
-    "dev": "rm -rf .parcel-cache && rm -rf cmd/web/static && parcel build"
+    "dev": "rm -rf .parcel-cache && rm -rf pkgs/assets/static && parcel build"
   },
   "devDependencies": {
     "@parcel/config-default": "^2.12.0",
