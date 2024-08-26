@@ -4,3 +4,4 @@ node_modules
 .DS_Store
 /cmd/web/static
 /pkgs/assets/static
+/views/pages/**/*.go
